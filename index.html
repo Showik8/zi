@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CINEMATA · ფილმები და სერიალები</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header" id="header">
+      <a href="index.html" class="brand">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M2 7h20M2 17h20M7 2v20M17 2v20" stroke-linecap="round" />
+        </svg>
+        CINEM<span class="brand-dot">A</span>TA
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="is-active">მთავარი</a>
+        <a href="#carousel">ფილმები</a>
+        <a href="#collections">კოლექციები</a>
+        <a href="#recent">ბოლოს ნანახი</a>
+        <a href="scroll-movie.html" class="nav-reels">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="3" />
+            <path d="M9 3v18M3 9h6M3 15h6" />
+          </svg>
+          Scroll Movie
+        </a>
+      </nav>
+
+      <div class="header-right">
+        <a href="#" class="header-cta">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            width="16"
+            height="16"
+          >
+            <path d="M5 3l14 9-14 9V3z" />
+          </svg>
+          გამოწერა
+        </a>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="მენიუ"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+      <div class="hero-slides" id="heroSlides"><!-- JS --></div>
+
+      <button class="hero-nav prev" id="heroPrev" aria-label="წინა">
+        <span class="nav-arrow">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M15 18l-6-6 6-6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <button class="hero-nav next" id="heroNext" aria-label="შემდეგი">
+        <span class="nav-arrow">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M9 6l6 6-6 6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+
+      <div class="dots hero-dots" id="heroDots"><!-- JS --></div>
+    </section>
+
+    <!-- ===================== CAROUSEL ===================== -->
+    <section class="section carousel-section" id="carousel">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">აღმოაჩინე</span>
+            <h2>ტრენდული ახლა</h2>
+          </div>
+          <div class="filters carousel-filters" id="carouselFilters">
+            <button class="filter-btn is-active" data-filter="all">
+              ყველა
+            </button>
+            <button class="filter-btn" data-filter="movie">ფილმები</button>
+            <button class="filter-btn" data-filter="episode">ეპიზოდები</button>
+            <button class="filter-btn" data-filter="animation">ანიმაცია</button>
+          </div>
+        </div>
+
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="carouselTrack"><!-- JS --></div>
+        </div>
+
+        <div class="carousel-controls">
+          <div class="dots" id="carouselDots"><!-- JS --></div>
+          <div class="nav-group">
+            <button class="nav-arrow" id="carPrev" aria-label="წინა">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M15 18l-6-6 6-6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button class="nav-arrow" id="carNext" aria-label="შემდეგი">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M9 6l6 6-6 6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COLLECTIONS (main) ===================== -->
+    <main>
+      <section class="section section-tight" id="collections">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">სტუდიების მიხედვით</span>
+              <h2>კოლექციები</h2>
+            </div>
+            <div class="filters" id="collectionFilters">
+              <button class="filter-btn is-active" data-filter="marvel">
+                Marvel
+              </button>
+              <button class="filter-btn" data-filter="netflix">Netflix</button>
+              <button class="filter-btn" data-filter="dc">DC</button>
+              <button class="filter-btn" data-filter="universal">
+                Universal Pictures
+              </button>
+            </div>
+          </div>
+          <div class="collections-grid" id="collectionsGrid"><!-- JS --></div>
+        </div>
+      </section>
+
+      <!-- ===================== RECENTLY WATCHED ===================== -->
+      <section class="section recent-section" id="recent">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">გააგრძელე ყურება</span>
+              <h2>ბოლოს ნანახი</h2>
+            </div>
+          </div>
+
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="recentTrack"><!-- JS --></div>
+          </div>
+
+          <div class="carousel-controls">
+            <div class="dots" id="recentDots"><!-- JS --></div>
+            <div class="nav-group">
+              <button class="nav-arrow" id="recPrev" aria-label="წინა">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M15 18l-6-6 6-6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button class="nav-arrow" id="recNext" aria-label="შემდეგი">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M9 6l6 6-6 6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="brand">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M2 7h20M2 17h20M7 2v20M17 2v20"
+                  stroke-linecap="round"
+                />
+              </svg>
+              CINEM<span class="brand-dot">A</span>TA
+            </a>
+            <p>
+              ფილმები, სერიალები და მოკლე მონაკვეთები ერთ სივრცეში. ნახე,
+              აღმოაჩინე და გააგრძელე ყურება ნებისმიერ მოწყობილობაზე.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Instagram"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="5" width="20" height="14" rx="4" />
+                  <path
+                    d="M10 9l5 3-5 3V9z"
+                    fill="currentColor"
+                    stroke="none"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="X"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17 3h3l-7 8 8 10h-6l-5-6-5 6H1l8-9L1 3h6l4 5 6-5z"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>ნახვა</h4>
+            <a href="#carousel">ფილმები</a>
+            <a href="#carousel">ეპიზოდები</a>
+            <a href="#carousel">ანიმაცია</a>
+            <a href="scroll-movie.html">Scroll Movie</a>
+          </div>
+          <div class="footer-col">
+            <h4>კოლექციები</h4>
+            <a href="#collections">Marvel</a>
+            <a href="#collections">Netflix</a>
+            <a href="#collections">DC</a>
+            <a href="#collections">Universal</a>
+          </div>
+          <div class="footer-col">
+            <h4>კომპანია</h4>
+            <a href="#">ჩვენ შესახებ</a>
+            <a href="#">დახმარება</a>
+            <a href="#">კონფიდენციალურობა</a>
+            <a href="#">კონტაქტი</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2025 CINEMATA. ყველა უფლება დაცულია.</span>
+          <span>დამზადებულია ❤️-ით კინოს მოყვარულთათვის</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
