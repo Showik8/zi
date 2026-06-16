@@ -1,0 +1,11 @@
+# runtime-ში გენერირებული JSON ბაზა
+/data/*.json
+
+# ატვირთული მედია
+/uploads/images/*
+/uploads/videos/*
+
+# .htaccess ფაილები დარჩეს
+!**/.htaccess
+
+.DS_Store
